@@ -1,0 +1,62 @@
+<section style="padding: var(--spacing-xl) 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--spacing-lg); align-items:start;">
+      <div>
+        {% if product.featured_image != blank %}
+          {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'eager' }}
+        {% else %}
+          <div style="aspect-ratio:1; background:var(--color-bg-alt); border-radius:var(--border-radius); display:flex; align-items:center; justify-content:center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          </div>
+        {% endif %}
+      </div>
+
+      <div>
+        {% if product.vendor != blank %}
+          <p style="color:var(--color-text-light); font-size:0.9rem; margin-bottom:0.25rem;">{{ product.vendor }}</p>
+        {% endif %}
+        <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">{{ product.title }}</h1>
+        <p style="font-size:1.5rem; font-weight:700; color:var(--color-accent); margin-bottom:var(--spacing-md);">{{ product.price | money }}</p>
+
+        {% if product.description != blank %}
+          <div style="color:var(--color-text-light); line-height:1.8; margin-bottom:var(--spacing-md);">
+            {{ product.description }}
+          </div>
+        {% endif %}
+
+        {% form 'product', product %}
+          {% if product.variants.size > 1 %}
+            <div style="margin-bottom:var(--spacing-sm);">
+              <label for="variant-select" style="font-weight:600; display:block; margin-bottom:0.5rem;">Size</label>
+              <select id="variant-select" name="id" style="width:100%; padding:0.75rem; border:1px solid var(--color-border); border-radius:var(--border-radius); font-size:1rem; font-family:inherit;">
+                {% for variant in product.variants %}
+                  <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
+                    {{ variant.title }}{% unless variant.available %} - Sold Out{% endunless %}
+                  </option>
+                {% endfor %}
+              </select>
+            </div>
+          {% else %}
+            <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+          {% endif %}
+
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:1rem;" {% unless product.available %}disabled{% endunless %}>
+            {% if product.available %}
+              Add to Cart
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

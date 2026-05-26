@@ -1,0 +1,44 @@
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "FunShirts"
+      },
+      "blocks": {
+        "nav-1": {
+          "type": "nav_link",
+          "settings": {
+            "label": "Shop All",
+            "link": "/collections/all"
+          }
+        },
+        "nav-2": {
+          "type": "nav_link",
+          "settings": {
+            "label": "New Arrivals",
+            "link": "/collections/frontpage"
+          }
+        },
+        "nav-3": {
+          "type": "nav_link",
+          "settings": {
+            "label": "About",
+            "link": "/pages/about"
+          }
+        },
+        "nav-4": {
+          "type": "nav_link",
+          "settings": {
+            "label": "Contact",
+            "link": "/pages/contact"
+          }
+        }
+      },
+      "block_order": ["nav-1", "nav-2", "nav-3", "nav-4"]
+    }
+  },
+  "order": ["header"]
+}
