@@ -1,0 +1,31 @@
+{
+  "name": "Footer group",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "logo_text": "FunShirts",
+        "description": "Making shirts that bring smiles since day one. Premium quality, fun designs, and a brand that doesn't take itself too seriously."
+      },
+      "blocks": {
+        "menu-1": {
+          "type": "menu",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "menu-2": {
+          "type": "menu",
+          "settings": {
+            "heading": "Help",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": ["menu-1", "menu-2"]
+    }
+  },
+  "order": ["footer"]
+}

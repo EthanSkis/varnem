@@ -1,0 +1,94 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Wear Your <span class='accent'>Personality<\/span>",
+        "subheading": "Premium quality tees that make a statement. Bold designs, soft fabric, and a fit that feels just right.",
+        "button_text": "Shop Now",
+        "button_link": "/collections/all",
+        "secondary_button_text": "Learn More",
+        "badge_label": "NEW",
+        "badge_text": "2026"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Products",
+        "subheading": "Check out our latest and greatest tees",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "show_view_all": true
+      }
+    },
+    "features": {
+      "type": "features",
+      "settings": {
+        "heading": "Why FunShirts?",
+        "subheading": "Here's what makes us different"
+      },
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "★",
+            "title": "Premium Quality",
+            "description": "100% soft-spun cotton that feels amazing against your skin."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🚚",
+            "title": "Free Shipping",
+            "description": "Free shipping on all orders over $50. No hidden fees."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "↩",
+            "title": "Easy Returns",
+            "description": "Not the right fit? Return it within 30 days, no questions asked."
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon": "♻",
+            "title": "Sustainable",
+            "description": "Eco-friendly inks and ethically sourced materials."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4"]
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Life's Too Short for Boring Shirts",
+        "text": "Every shirt tells a story. Whether you're looking for something that sparks a conversation, shows off your sense of humor, or just feels incredibly comfortable — we've got you covered. Our designs are printed on premium cotton tees that get softer with every wash.",
+        "button_text": "Browse the Collection",
+        "button_link": "/collections/all",
+        "background_color": "#ffffff"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Stay in the Loop",
+        "subheading": "Get exclusive drops, deals, and fun stuff straight to your inbox.",
+        "placeholder": "Enter your email",
+        "button_text": "Subscribe"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured-collection",
+    "features",
+    "rich-text",
+    "newsletter"
+  ]
+}

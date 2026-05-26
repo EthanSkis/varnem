@@ -1,0 +1,51 @@
+<section style="padding: var(--spacing-xl) 0;">
+  <div class="container">
+    <div class="section-header">
+      <h1 style="font-size: 2.5rem; font-weight: 800;">{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <p>{{ collection.description }}</p>
+      {% endif %}
+    </div>
+
+    <div class="products-grid">
+      {% for product in collection.products %}
+        <a href="{{ product.url }}" class="product-card">
+          <div class="product-card-image">
+            {% if product.featured_image != blank %}
+              {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+            {% else %}
+              <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--color-bg-alt);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            {% endif %}
+          </div>
+          <div class="product-card-body">
+            {% if product.vendor != blank %}
+              <div class="product-card-vendor">{{ product.vendor }}</div>
+            {% endif %}
+            <h3 class="product-card-title">{{ product.title }}</h3>
+            <div class="product-card-price">{{ product.price | money }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    {% if collection.products.size == 0 %}
+      <p style="text-align:center; color:var(--color-text-light); padding: var(--spacing-lg) 0;">No products found in this collection.</p>
+    {% endif %}
+
+    {% if paginate.pages > 1 %}
+      <div style="text-align:center; margin-top:var(--spacing-md);">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Products",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

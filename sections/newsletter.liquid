@@ -1,0 +1,54 @@
+<section class="newsletter-section">
+  <div class="container">
+    <h2>{{ section.settings.heading | default: "Stay in the Loop" }}</h2>
+    <p>{{ section.settings.subheading | default: "Get exclusive drops, deals, and fun stuff straight to your inbox." }}</p>
+    {% form 'customer', class: 'newsletter-form' %}
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="{{ section.settings.placeholder | default: 'Enter your email' }}"
+        required
+        autocomplete="email"
+      >
+      <button type="submit" class="btn btn-primary">{{ section.settings.button_text | default: "Subscribe" }}</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stay in the Loop"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Get exclusive drops, deals, and fun stuff straight to your inbox."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}
