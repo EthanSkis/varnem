@@ -37,10 +37,8 @@
           <img src="{{ section.settings.image_url }}" alt="{{ section.settings.heading }}" loading="eager" width="600">
         </div>
       {% else %}
-        <div class="hero-image-wrapper" style="background: rgba(255,255,255,0.05); border-radius: 16px; width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
-          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.38 3.46 16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
-          </svg>
+        <div class="hero-image-wrapper">
+          <img src="{{ 'hero-image.png' | asset_url }}" alt="{{ section.settings.heading }}" loading="eager" width="600">
         </div>
       {% endif %}
     </div>
