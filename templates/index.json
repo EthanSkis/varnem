@@ -3,7 +3,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "Wear Your <span class='accent'>Personality<\/span>",
+        "heading": "Wear Your Personality",
         "subheading": "Premium quality tees that make a statement. Bold designs, soft fabric, and a fit that feels just right.",
         "button_text": "Shop Now",
         "button_link": "/collections/all",
@@ -32,7 +32,7 @@
         "feature-1": {
           "type": "feature",
           "settings": {
-            "icon": "★",
+            "icon": "*",
             "title": "Premium Quality",
             "description": "100% soft-spun cotton that feels amazing against your skin."
           }
@@ -40,7 +40,7 @@
         "feature-2": {
           "type": "feature",
           "settings": {
-            "icon": "🚚",
+            "icon": ">",
             "title": "Free Shipping",
             "description": "Free shipping on all orders over $50. No hidden fees."
           }
@@ -48,7 +48,7 @@
         "feature-3": {
           "type": "feature",
           "settings": {
-            "icon": "↩",
+            "icon": "<",
             "title": "Easy Returns",
             "description": "Not the right fit? Return it within 30 days, no questions asked."
           }
@@ -56,7 +56,7 @@
         "feature-4": {
           "type": "feature",
           "settings": {
-            "icon": "♻",
+            "icon": "+",
             "title": "Sustainable",
             "description": "Eco-friendly inks and ethically sourced materials."
           }
@@ -68,7 +68,7 @@
       "type": "rich-text",
       "settings": {
         "heading": "Life's Too Short for Boring Shirts",
-        "text": "Every shirt tells a story. Whether you're looking for something that sparks a conversation, shows off your sense of humor, or just feels incredibly comfortable — we've got you covered. Our designs are printed on premium cotton tees that get softer with every wash.",
+        "text": "Every shirt tells a story. Whether you're looking for something that sparks a conversation, shows off your sense of humor, or just feels incredibly comfortable - we've got you covered. Our designs are printed on premium cotton tees that get softer with every wash.",
         "button_text": "Browse the Collection",
         "button_link": "/collections/all",
         "background_color": "#ffffff"

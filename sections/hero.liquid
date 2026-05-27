@@ -1,7 +1,7 @@
 <section class="hero-section">
   <div class="hero-content">
     <div class="hero-text">
-      <h1>{{ section.settings.heading | default: "Wear Your <span class='accent'>Personality</span>" }}</h1>
+      <h1>{{ section.settings.heading | default: "Wear Your Personality" }}</h1>
       <p>{{ section.settings.subheading | default: "Premium quality tees that make a statement. Bold designs, soft fabric, and a fit that feels just right." }}</p>
       <div class="hero-buttons">
         {% if section.settings.button_text != blank %}
@@ -40,10 +40,10 @@
   "tag": "section",
   "settings": [
     {
-      "type": "inline_richtext",
+      "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Wear Your <span class='accent'>Personality</span>"
+      "default": "Wear Your Personality"
     },
     {
       "type": "text",
