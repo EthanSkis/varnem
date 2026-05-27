@@ -5,9 +5,9 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "FREE SHIPPING on orders $50+ | 30-Day Money-Back Guarantee",
+        "text": "NEW: The June Girl Tee is here! Starting at $16.47 | 30-Day Money-Back Guarantee",
         "link_text": "Shop Now",
-        "link": "/collections/all",
+        "link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee",
         "enable_countdown": true,
         "background_color": "#e94560",
         "text_color": "#ffffff"
@@ -29,8 +29,8 @@
         "nav-2": {
           "type": "nav_link",
           "settings": {
-            "label": "New Arrivals",
-            "link": "/pages/new-arrivals"
+            "label": "June Girl Tee",
+            "link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee"
           }
         },
         "nav-3": {
