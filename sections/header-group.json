@@ -2,6 +2,17 @@
   "name": "Header group",
   "type": "header",
   "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "FREE SHIPPING on orders over $50 — Limited time only!",
+        "link_text": "Shop Now",
+        "link": "/collections/all",
+        "enable_countdown": true,
+        "background_color": "#e94560",
+        "text_color": "#ffffff"
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -40,5 +51,5 @@
       "block_order": ["nav-1", "nav-2", "nav-3", "nav-4"]
     }
   },
-  "order": ["header"]
+  "order": ["announcement-bar", "header"]
 }

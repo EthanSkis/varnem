@@ -74,6 +74,43 @@
         "background_color": "#ffffff"
       }
     },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "subheading": "Real reviews from real people"
+      },
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Absolutely love the quality! The fabric is so soft and the print hasn't faded after multiple washes. Best t-shirt brand I've found.",
+            "author": "Sarah M.",
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Ordered 3 shirts and they all fit perfectly. The designs are hilarious and I get compliments every time I wear them. Already ordering more!",
+            "author": "Jake T.",
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Super fast shipping and the quality exceeded my expectations. These are now my go-to gifts for friends. 10/10 recommend.",
+            "author": "Emily R.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+    },
     "newsletter": {
       "type": "newsletter",
       "settings": {
@@ -89,6 +126,7 @@
     "featured-collection",
     "features",
     "rich-text",
+    "testimonials",
     "newsletter"
   ]
 }

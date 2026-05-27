@@ -1,34 +1,36 @@
-<section style="padding: var(--spacing-xl) 0;">
+<section class="product-section">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--spacing-lg); align-items:start;">
-      <div>
+    <div class="product-layout">
+      <div class="product-gallery">
         {% if product.featured_image != blank %}
-          {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'eager' }}
+          <div class="product-image-main">
+            {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'eager' }}
+          </div>
         {% else %}
-          <div style="aspect-ratio:1; background:var(--color-bg-alt); border-radius:var(--border-radius); display:flex; align-items:center; justify-content:center;">
+          <div class="product-image-main product-image-placeholder">
             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           </div>
         {% endif %}
       </div>
 
-      <div>
+      <div class="product-info">
         {% if product.vendor != blank %}
-          <p style="color:var(--color-text-light); font-size:0.9rem; margin-bottom:0.25rem;">{{ product.vendor }}</p>
+          <p class="product-vendor">{{ product.vendor }}</p>
         {% endif %}
-        <h1 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">{{ product.title }}</h1>
-        <p style="font-size:1.5rem; font-weight:700; color:var(--color-accent); margin-bottom:var(--spacing-md);">{{ product.price | money }}</p>
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">{{ product.price | money }}</p>
 
         {% if product.description != blank %}
-          <div style="color:var(--color-text-light); line-height:1.8; margin-bottom:var(--spacing-md);">
+          <div class="product-description">
             {{ product.description }}
           </div>
         {% endif %}
 
         {% form 'product', product %}
           {% if product.variants.size > 1 %}
-            <div style="margin-bottom:var(--spacing-sm);">
-              <label for="variant-select" style="font-weight:600; display:block; margin-bottom:0.5rem;">Size</label>
-              <select id="variant-select" name="id" style="width:100%; padding:0.75rem; border:1px solid var(--color-border); border-radius:var(--border-radius); font-size:1rem; font-family:inherit;">
+            <div class="product-variants">
+              <label for="variant-select" class="product-variants__label">Size</label>
+              <select id="variant-select" name="id" class="product-variants__select">
                 {% for variant in product.variants %}
                   <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
                     {{ variant.title }}{% unless variant.available %} - Sold Out{% endunless %}
@@ -40,18 +42,234 @@
             <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
           {% endif %}
 
-          <button type="submit" class="btn btn-primary" style="width:100%; padding:1rem;" {% unless product.available %}disabled{% endunless %}>
+          <button type="submit" class="btn btn-primary product-atc" {% unless product.available %}disabled{% endunless %}>
             {% if product.available %}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="m1 1 4 2 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
               Add to Cart
             {% else %}
               Sold Out
             {% endif %}
           </button>
         {% endform %}
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Secure Checkout</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Money-Back Guarantee</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Free Shipping $50+</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
+            <span>Worldwide Delivery</span>
+          </div>
+        </div>
+
+        <!-- Payment Icons -->
+        <div class="payment-icons">
+          <span class="payment-icons__label">Accepted payments</span>
+          <div class="payment-icons__list">
+            <div class="payment-icon">
+              <svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"/><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/><path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"/></svg>
+            </div>
+            <div class="payment-icon">
+              <svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"/><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/><circle fill="#EB001B" cx="15" cy="12" r="7"/><circle fill="#F79E1B" cx="23" cy="12" r="7"/><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"/></svg>
+            </div>
+            <div class="payment-icon">
+              <svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-amex"><title id="pi-amex">Amex</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"/><path fill="#006FCF" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/><path fill="#fff" d="M8.971 10.268l.774 1.876H8.203l.768-1.876zm16.075.078h-2.977v.827h2.929v1.239h-2.923v.922h2.977v.739l2.077-2.245-2.077-1.72v.238h-.006zm-14.063-2.34h3.995l.887 1.935.852-1.935h3.986v5.545l-3.363-5.545h-1.604l-3.665 5.545V8.006zm19.87 5.545h-2.283l-1.492-1.608-1.533 1.608H18.56V8.006h7.075l1.456 1.58 1.51-1.58h2.283L28.25 10.9l2.603 2.651z"/></svg>
+            </div>
+            <div class="payment-icon">
+              <svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-paypal"><title id="pi-paypal">PayPal</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"/><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/><path fill="#003087" d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4h2.3l.6-3.5v.2c.1-.3.3-.5.6-.5h1.3c2.5 0 4.5-1 5-4 0-.1 0-.2.1-.3C24.4 7.5 23.9 7.8 23.9 8.3"/><path fill="#3086C8" d="M23.9 8.3c-.5 2.9-2.5 4-5 4h-1.3c-.3 0-.5.2-.6.5l-.6 4.1c0 .2.1.3.3.3H19c.2 0 .4-.2.5-.4v-.1l.4-2.4v-.2c0-.2.3-.4.5-.4h.3c2 0 3.6-.8 4-3.2.2-1 .1-1.8-.4-2.4-.1-.2-.3-.3-.5-.4"/><path fill="#012169" d="M23.3 8.1c-.1 0-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.4-.1-.8-.1-1.3-.1h-3.8c-.1 0-.2 0-.3.1-.2.1-.3.2-.3.4l-.7 4.4v.1c.1-.3.3-.5.6-.5h1.3c2.5 0 4.5-1 5-4 0-.1 0-.2.1-.3-.2-.1-.3-.2-.5-.2h-.5z"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .product-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+  }
+
+  .product-image-main {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-bg-alt);
+  }
+
+  .product-image-main img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-image-placeholder {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-vendor {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .product-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .product-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .product-variants {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .product-variants__label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-variants__select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .product-variants__select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .product-atc {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .product-atc:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Trust Badges */
+  .trust-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+
+  .trust-badge svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  .trust-badge span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  /* Payment Icons */
+  .payment-icons {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+  }
+
+  .payment-icons__label {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .payment-icons__list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .payment-icon {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .product-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-badges {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 
 {% schema %}
 {
