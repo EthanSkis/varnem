@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "about",
+      "settings": {
+        "heading": "We Make Shirts That Make People Smile",
+        "lead": "FunShirts.us started with a simple idea: life's too short for boring clothes. We design tees and accessories that spark joy, start conversations, and feel incredible to wear.",
+        "story_heading": "Our Story",
+        "story_text_1": "It all started when we couldn't find a t-shirt brand that nailed both quality and personality. Everything was either cheap fabric with a funny print, or premium quality with zero personality. We thought: why not both?",
+        "story_text_2": "Today, every FunShirts design is printed on 100% ring-spun cotton using eco-friendly water-based inks. We obsess over the details so you don't have to - from the weight of the fabric to the softness of the collar. The result? Tees that get softer with every wash and prints that never crack or fade.",
+        "values_heading": "What We Stand For",
+        "cta_heading": "Ready to Upgrade Your Wardrobe?",
+        "cta_text": "Join thousands of happy customers wearing the comfiest, funniest shirts on the planet.",
+        "cta_button": "Shop the Collection",
+        "cta_link": "/collections/all"
+      },
+      "blocks": {
+        "value-1": {
+          "type": "value",
+          "settings": {
+            "icon": "heart",
+            "title": "Quality Over Everything",
+            "description": "100% ring-spun cotton, eco-friendly inks, and prints that never crack or fade."
+          }
+        },
+        "value-2": {
+          "type": "value",
+          "settings": {
+            "icon": "smile",
+            "title": "Designed to Make You Smile",
+            "description": "Every design is made to spark joy and start conversations wherever you go."
+          }
+        },
+        "value-3": {
+          "type": "value",
+          "settings": {
+            "icon": "leaf",
+            "title": "Kind to the Planet",
+            "description": "Water-based inks, ethically sourced cotton, and minimal-waste packaging."
+          }
+        },
+        "value-4": {
+          "type": "value",
+          "settings": {
+            "icon": "globe",
+            "title": "Made for Everyone",
+            "description": "Inclusive sizing and designs that bring people together, not apart."
+          }
+        }
+      },
+      "block_order": ["value-1", "value-2", "value-3", "value-4"]
+    }
+  },
+  "order": ["main"]
+}
