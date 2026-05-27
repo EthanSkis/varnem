@@ -5,7 +5,7 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "FREE SHIPPING on orders over $50 — Limited time only!",
+        "text": "FREE SHIPPING on orders $50+ | 30-Day Money-Back Guarantee",
         "link_text": "Shop Now",
         "link": "/collections/all",
         "enable_countdown": true,
