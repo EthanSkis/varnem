@@ -46,12 +46,6 @@
         {% endfor %}
       {% endif %}
     </div>
-
-    {% if section.settings.show_view_all and collection != blank %}
-      <div style="text-align:center; margin-top:var(--spacing-md);">
-        <a href="{{ collection.url }}" class="btn btn-outline">View All</a>
-      </div>
-    {% endif %}
   </div>
 </section>
 
@@ -85,12 +79,6 @@
       "max": 12,
       "step": 1,
       "default": 4
-    },
-    {
-      "type": "checkbox",
-      "id": "show_view_all",
-      "label": "Show 'View all' button",
-      "default": true
     }
   ],
   "presets": [
