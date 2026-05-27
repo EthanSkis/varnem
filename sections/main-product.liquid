@@ -432,12 +432,96 @@
   }
 
   @media (max-width: 768px) {
+    .product-section {
+      padding: var(--spacing-md) 0;
+    }
+
     .product-layout {
       grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+    }
+
+    .product-atc {
+      font-size: 1rem;
+      padding: 0.875rem;
+      position: sticky;
+      bottom: 0;
+      z-index: 10;
+      border-radius: 0;
+      margin: 0 calc(var(--spacing-md) * -1);
+      width: calc(100% + var(--spacing-md) * 2);
+    }
+
+    .carousel-main {
+      border-radius: 0;
+      margin: 0 calc(var(--spacing-md) * -1);
+      width: calc(100% + var(--spacing-md) * 2);
+    }
+
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+    }
+
+    .carousel-btn--prev { left: 8px; }
+    .carousel-btn--next { right: 8px; }
+
+    .carousel-thumbs {
+      gap: 6px;
+    }
+
+    .carousel-thumb {
+      width: 52px;
+      height: 52px;
     }
 
     .trust-badges {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .trust-badge {
+      padding: 0.5rem;
+      gap: 0.35rem;
+    }
+
+    .trust-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .trust-badge span {
+      font-size: 0.7rem;
+    }
+
+    .payment-icons__list {
+      justify-content: center;
+    }
+
+    .product-description {
+      font-size: 0.9rem;
+    }
+
+    .product-variants__select {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .trust-badges {
       grid-template-columns: 1fr;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
     }
   }
 </style>
