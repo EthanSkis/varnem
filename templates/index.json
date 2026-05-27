@@ -3,9 +3,9 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "social_proof_text": "Loved by 1,000+ happy customers",
+        "social_proof_text": "Loved by our customers",
         "heading": "The June Girl Tee Is Here",
-        "subheading": "Sweet as sugar, cold as ice. The perfect birthday tee for every June girl - lightweight, breathable cotton that looks bold and feels incredible. Starting at just $16.47.",
+        "subheading": "Sweet as sugar, cold as ice. The perfect birthday tee for every June girl - lightweight, breathable cotton that looks bold and feels incredible.",
         "button_text": "Get Yours Now",
         "button_link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee"
       }
@@ -22,39 +22,11 @@
     "testimonials": {
       "type": "testimonials",
       "settings": {
-        "heading": "Don't Just Take Our Word For It",
-        "aggregate_text": "4.9 out of 5 based on 200+ reviews"
+        "heading": "What Our Customers Are Saying",
+        "aggregate_text": "We'd love to hear from you — leave a review after your purchase!"
       },
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Got this for my sister's June birthday and she hasn't taken it off since. The fabric is insanely soft and the print is crisp. Already ordering one for myself.",
-            "author": "Sarah M.",
-            "verified": true
-          }
-        },
-        "testimonial-2": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Finally a birthday tee that's actually cute and not cheesy. The fit is perfect and I get compliments every time I wear it. 10/10.",
-            "author": "Jake T.",
-            "verified": true
-          }
-        },
-        "testimonial-3": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Ordered Friday, arrived Tuesday. Quality blew me away for $16. This is now my go-to birthday gift for all my June friends.",
-            "author": "Emily R.",
-            "verified": true
-          }
-        }
-      },
-      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+      "blocks": {},
+      "block_order": []
     },
     "features": {
       "type": "features",
@@ -103,7 +75,7 @@
       "settings": {
         "heading": "The Perfect June Birthday Gift",
         "text": "Know a June girl? This tee says it all - sweet as sugar, cold as ice, and bold enough to turn heads. Lightweight cotton, clean crew neck, and a design that speaks with quiet confidence. Available in black and white.",
-        "button_text": "Shop the June Girl Tee - $16.47",
+        "button_text": "Shop the June Girl Tee",
         "button_link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee",
         "background_color": "#ffffff"
       }

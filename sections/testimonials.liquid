@@ -2,16 +2,7 @@
   <div class="container">
     <div class="section-header">
       <h2>{{ section.settings.heading | default: "What Our Customers Say" }}</h2>
-      <div class="testimonials-aggregate">
-        <div class="hero-stars" style="justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#facc15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p class="testimonials-aggregate__text">{{ section.settings.aggregate_text | default: "4.9 out of 5 based on 200+ reviews" }}</p>
-      </div>
+      <p class="testimonials-aggregate__text">{{ section.settings.aggregate_text }}</p>
     </div>
 
     <div class="testimonials-grid">
@@ -180,7 +171,7 @@
       "type": "text",
       "id": "aggregate_text",
       "label": "Aggregate rating text",
-      "default": "4.9 out of 5 based on 200+ reviews"
+      "default": "We'd love to hear from you — leave a review after your purchase!"
     }
   ],
   "blocks": [
@@ -226,35 +217,7 @@
   "presets": [
     {
       "name": "Testimonials",
-      "blocks": [
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Absolutely love the quality! The fabric is so soft and the print hasn't faded after multiple washes. Best t-shirt brand I've found.",
-            "author": "Sarah M.",
-            "verified": true
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Ordered 3 shirts and they all fit perfectly. The designs are hilarious and I get compliments every time I wear them. Already ordering more!",
-            "author": "Jake T.",
-            "verified": true
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Super fast shipping and the quality exceeded my expectations. These are now my go-to gifts for friends. 10/10 recommend.",
-            "author": "Emily R.",
-            "verified": true
-          }
-        }
-      ]
+      "blocks": []
     }
   ]
 }
