@@ -54,12 +54,6 @@
           {% endif %}
         </div>
 
-        {% if product.description != blank %}
-          <div class="product-description">
-            {{ product.description }}
-          </div>
-        {% endif %}
-
         {% form 'product', product %}
           {% if product.variants.size > 1 %}
             <div class="product-variants">
@@ -124,6 +118,12 @@
             </div>
           </div>
         </div>
+
+        {% if product.description != blank %}
+          <div class="product-description">
+            {{ product.description }}
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
