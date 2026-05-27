@@ -47,7 +47,7 @@
           <p class="product-vendor">{{ product.vendor }}</p>
         {% endif %}
         <h1 class="product-title">{{ product.title }}</h1>
-        <p class="product-price">{{ product.price | money }}</p>
+        <p class="product-price" id="product-price">{{ product.selected_or_first_available_variant.price | money }}</p>
 
         {% if product.description != blank %}
           <div class="product-description">
@@ -61,7 +61,7 @@
               <label for="variant-select" class="product-variants__label">Size</label>
               <select id="variant-select" name="id" class="product-variants__select">
                 {% for variant in product.variants %}
-                  <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
+                  <option value="{{ variant.id }}" data-price="{{ variant.price | money }}" {% unless variant.available %}disabled{% endunless %}>
                     {{ variant.title }}{% unless variant.available %} - Sold Out{% endunless %}
                   </option>
                 {% endfor %}
@@ -455,6 +455,18 @@
     mainEl.addEventListener('touchend', function(e) {
       var diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+  })();
+
+  (function() {
+    var select = document.getElementById('variant-select');
+    var priceEl = document.getElementById('product-price');
+    if (!select || !priceEl) return;
+
+    select.addEventListener('change', function() {
+      var selected = this.options[this.selectedIndex];
+      var price = selected.getAttribute('data-price');
+      if (price) priceEl.textContent = price;
     });
   })();
 </script>
