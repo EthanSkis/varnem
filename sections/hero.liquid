@@ -32,6 +32,10 @@
         <div class="hero-image-wrapper">
           {{ section.settings.image | image_url: width: 600 | image_tag: loading: 'eager' }}
         </div>
+      {% elsif section.settings.image_url != blank %}
+        <div class="hero-image-wrapper">
+          <img src="{{ section.settings.image_url }}" alt="{{ section.settings.heading }}" loading="eager" width="600">
+        </div>
       {% else %}
         <div class="hero-image-wrapper" style="background: rgba(255,255,255,0.05); border-radius: 16px; width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
           <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -70,6 +74,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Hero image URL (alternative to picker)"
     },
     {
       "type": "text",
