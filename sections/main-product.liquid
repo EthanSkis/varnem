@@ -132,6 +132,7 @@
 <style>
   .product-section {
     padding: var(--spacing-xl) 0;
+    overflow: hidden;
   }
 
   .product-layout {
@@ -139,6 +140,10 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
     align-items: start;
+  }
+
+  .product-gallery {
+    min-width: 0;
   }
 
   /* Carousel */
@@ -456,14 +461,10 @@
       bottom: 0;
       z-index: 10;
       border-radius: 0;
-      margin: 0 calc(var(--spacing-md) * -1);
-      width: calc(100% + var(--spacing-md) * 2);
     }
 
     .carousel-main {
       border-radius: 0;
-      margin: 0 calc(var(--spacing-md) * -1);
-      width: calc(100% + var(--spacing-md) * 2);
     }
 
     .carousel-btn {
