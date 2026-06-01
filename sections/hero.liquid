@@ -1,9 +1,11 @@
 <section class="hero-section">
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-social-proof">
-        <span>{{ section.settings.social_proof_text }}</span>
-      </div>
+      {% if section.settings.social_proof_text != blank %}
+        <div class="hero-social-proof">
+          <span>{{ section.settings.social_proof_text }}</span>
+        </div>
+      {% endif %}
       <h1>{{ section.settings.heading }}</h1>
       <p>{{ section.settings.subheading }}</p>
       <div class="hero-buttons">
@@ -15,9 +17,9 @@
         {% endif %}
       </div>
       <div class="hero-guarantees">
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free shipping $50+</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 30-day returns</span>
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Secure checkout</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Fast Shipping</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 24/7 Support</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Secure Checkout</span>
       </div>
     </div>
     <div class="hero-visual">
@@ -47,19 +49,19 @@
       "type": "text",
       "id": "social_proof_text",
       "label": "Social proof text",
-      "default": "Loved by our customers"
+      "default": "Premium Products"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Tees That Start Conversations and Turn Heads"
+      "default": "Spring Sale Now On"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Look good instantly in premium cotton tees that get softer with every wash. No ironing, no fading, no regrets."
+      "default": "Need help or have a query? Click on 'contact us' button below! We offer 24/7 phone support."
     },
     {
       "type": "image_picker",
@@ -75,7 +77,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button text",
-      "default": "Shop Best Sellers"
+      "default": "Shop Now"
     },
     {
       "type": "url",
