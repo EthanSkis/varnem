@@ -3,14 +3,14 @@
     "main": {
       "type": "about",
       "settings": {
-        "heading": "We Make Shirts That Make People Smile",
-        "lead": "FunShirts.us started with a simple idea: life's too short for boring clothes. We design tees and accessories that spark joy, start conversations, and feel incredible to wear.",
+        "heading": "Premium Products, Delivered With Care",
+        "lead": "Varnem started with a simple idea: everyday essentials should be premium, useful, and genuinely enjoyable to own. We curate products that make life a little easier and a lot more delightful.",
         "story_heading": "Our Story",
-        "story_text_1": "It all started when we couldn't find a t-shirt brand that nailed both quality and personality. Everything was either cheap fabric with a funny print, or premium quality with zero personality. We thought: why not both?",
-        "story_text_2": "Today, every FunShirts design is printed on 100% ring-spun cotton using eco-friendly water-based inks. We obsess over the details so you don't have to - from the weight of the fabric to the softness of the collar. The result? Tees that get softer with every wash and prints that never crack or fade.",
+        "story_text_1": "It all started when we couldn't find a store that nailed both quality and value. Everything was either cheap and disposable, or premium with a price that didn't make sense. We thought: why not both?",
+        "story_text_2": "Today, every Varnem product is hand-picked and quality-checked before it reaches your door. We obsess over the details so you don't have to - from the materials to the finish. The result? Premium products you'll be glad you bought, backed by 24/7 support.",
         "values_heading": "What We Stand For",
-        "cta_heading": "Ready to Upgrade Your Wardrobe?",
-        "cta_text": "Join thousands of happy customers wearing the comfiest, funniest shirts on the planet.",
+        "cta_heading": "Ready to Discover Your New Favorites?",
+        "cta_text": "Join thousands of happy customers shopping premium products with confidence.",
         "cta_button": "Shop the Collection",
         "cta_link": "/collections/all"
       },

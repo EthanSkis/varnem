@@ -33,7 +33,10 @@
         </div>
       {% else %}
         <div class="hero-image-wrapper">
-          <img src="{{ 'hero-image.png' | asset_url }}" alt="{{ section.settings.heading }}" loading="eager" width="600">
+          <div class="hero-image-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>Add a hero image</span>
+          </div>
         </div>
       {% endif %}
     </div>
