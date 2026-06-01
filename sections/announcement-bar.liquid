@@ -1,8 +1,5 @@
 <div class="announcement-bar" style="background: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
   <div class="announcement-bar__inner">
-    {% if section.settings.enable_countdown %}
-      <span class="announcement-bar__urgency" aria-hidden="true">⚡</span>
-    {% endif %}
     <p class="announcement-bar__message">
       {{ section.settings.text }}
     </p>
@@ -19,52 +16,20 @@
   .announcement-bar {
     padding: 0.6rem 1rem;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     position: relative;
-    overflow: hidden;
-  }
-
-  .announcement-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255,255,255,0.05) 25%,
-      rgba(255,255,255,0.1) 50%,
-      rgba(255,255,255,0.05) 75%,
-      transparent 100%
-    );
-    animation: announcement-shimmer 3s ease-in-out infinite;
-  }
-
-  @keyframes announcement-shimmer {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(50%); }
   }
 
   .announcement-bar__inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     position: relative;
     z-index: 1;
-  }
-
-  .announcement-bar__urgency {
-    animation: announcement-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes announcement-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
   }
 
   .announcement-bar__message {
@@ -75,9 +40,9 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
     transition: opacity 0.2s;
   }
 
@@ -95,7 +60,7 @@
       "type": "text",
       "id": "text",
       "label": "Announcement text",
-      "default": "🎉 FREE SHIPPING on orders over $50 — Limited time only!"
+      "default": "Spring Sale Now On"
     },
     {
       "type": "text",
@@ -113,13 +78,13 @@
       "type": "checkbox",
       "id": "enable_countdown",
       "label": "Show urgency indicator",
-      "default": true
+      "default": false
     },
     {
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#e94560"
+      "default": "#113057"
     },
     {
       "type": "color",

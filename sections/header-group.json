@@ -5,50 +5,57 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "NEW: The June Girl Tee is here! Free shipping on orders $50+ | 30-Day Money-Back Guarantee",
+        "text": "Spring Sale Now On",
         "link_text": "Shop Now",
-        "link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee",
-        "enable_countdown": true,
-        "background_color": "#e94560",
+        "link": "/collections/all",
+        "enable_countdown": false,
+        "background_color": "#113057",
         "text_color": "#ffffff"
       }
     },
     "header": {
       "type": "header",
       "settings": {
-        "logo_text": "FunShirts.us"
+        "logo_text": "belro"
       },
       "blocks": {
         "nav-1": {
           "type": "nav_link",
           "settings": {
-            "label": "Shop All",
-            "link": "/collections/all"
+            "label": "Home",
+            "link": "/"
           }
         },
         "nav-2": {
           "type": "nav_link",
           "settings": {
-            "label": "June Girl Tee",
-            "link": "/products/june-girl-t-shirt-sweet-as-sugar-cold-as-ice-graphic-tee"
+            "label": "Shop Now",
+            "link": "/collections/all"
           }
         },
         "nav-3": {
           "type": "nav_link",
           "settings": {
-            "label": "About",
-            "link": "/pages/about"
+            "label": "Collections",
+            "link": "/collections"
           }
         },
         "nav-4": {
           "type": "nav_link",
           "settings": {
-            "label": "Contact",
+            "label": "Contact Us",
             "link": "/pages/contact"
+          }
+        },
+        "nav-5": {
+          "type": "nav_link",
+          "settings": {
+            "label": "About Us",
+            "link": "/pages/about"
           }
         }
       },
-      "block_order": ["nav-1", "nav-2", "nav-3", "nav-4"]
+      "block_order": ["nav-1", "nav-2", "nav-3", "nav-4", "nav-5"]
     }
   },
   "order": ["announcement-bar", "header"]

@@ -5,8 +5,8 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "logo_text": "FunShirts.us",
-        "description": "Making shirts that bring smiles since day one. Premium quality, fun designs, and a brand that doesn't take itself too seriously."
+        "logo_text": "belro",
+        "description": "Premium products delivered with care. We're dedicated to bringing you the best in Home & Kitchen, Garden & Outdoor, and everyday essentials. 24/7 customer support available."
       },
       "blocks": {
         "menu-1": {
@@ -19,7 +19,7 @@
         "menu-2": {
           "type": "menu",
           "settings": {
-            "heading": "Help",
+            "heading": "Information",
             "menu": "footer"
           }
         }
