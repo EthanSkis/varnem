@@ -3,7 +3,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="site-logo" style="font-size:1.3rem; margin-bottom:0.5rem; color:#ffffff;">{{ section.settings.logo_text | default: shop.name }}</div>
-        <p>{{ section.settings.description | default: "Making shirts that bring smiles since day one. Premium quality, fun designs, and a brand that doesn't take itself too seriously." }}</p>
+        <p>{{ section.settings.description | default: "Premium products delivered with care. Quality you can count on, backed by 24/7 customer support." }}</p>
       </div>
 
       {% for block in section.blocks %}
@@ -37,13 +37,13 @@
       "type": "text",
       "id": "logo_text",
       "label": "Logo text",
-      "default": "FunShirts"
+      "default": "Varnem"
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Brand description",
-      "default": "Making shirts that bring smiles since day one. Premium quality, fun designs, and a brand that doesn't take itself too seriously."
+      "default": "Premium products delivered with care. Quality you can count on, backed by 24/7 customer support."
     }
   ],
   "blocks": [
