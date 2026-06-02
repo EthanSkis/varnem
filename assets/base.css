@@ -705,6 +705,68 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-primary-tint);
 }
 
+/* Cart Line Item */
+.cart-line__info {
+  flex: 1;
+}
+
+/* Cart Quantity Stepper */
+.cart-qty {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.cart-qty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 36px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-text-light);
+  background: var(--color-bg-alt);
+  transition: all var(--transition);
+  user-select: none;
+}
+
+.cart-qty-btn--minus {
+  border-right: 1px solid var(--color-border);
+}
+
+.cart-qty-btn--plus {
+  border-left: 1px solid var(--color-border);
+}
+
+.cart-qty-btn:not(.is-disabled):hover {
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+}
+
+.cart-qty-btn.is-disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.cart-qty-value {
+  min-width: 42px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-xs);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
 /* Footer */
 .site-footer {
   background: var(--color-primary);
@@ -819,6 +881,17 @@ h1, h2, h3, h4, h5, h6 {
 
   .header-inner {
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-line {
+    flex-wrap: wrap;
+  }
+
+  /* Title fills the first line beside the image; qty, price and remove wrap below */
+  .cart-line__info {
+    flex-basis: calc(100% - 80px - var(--spacing-sm));
   }
 }
 
