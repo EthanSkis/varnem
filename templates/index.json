@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -6,6 +15,8 @@
         "social_proof_text": "Premium Products",
         "heading": "Spring Sale Now On",
         "subheading": "Need help or have a query? Click on 'contact us' button below! We offer 24/7 phone support.",
+        "image": "shopify://shop_images/hf_20260602_061334_1edd29bc-6281-42bd-b769-e6216d89405d.png",
+        "image_url": "",
         "button_text": "Shop Now",
         "button_link": "/collections/all"
       }
@@ -21,10 +32,6 @@
     },
     "features": {
       "type": "features",
-      "settings": {
-        "heading": "Why Shop With Varnem?",
-        "subheading": "Quality products, exceptional service"
-      },
       "blocks": {
         "feature-1": {
           "type": "feature",
@@ -59,7 +66,16 @@
           }
         }
       },
-      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4"]
+      "block_order": [
+        "feature-1",
+        "feature-2",
+        "feature-3",
+        "feature-4"
+      ],
+      "settings": {
+        "heading": "Why Shop With Varnem?",
+        "subheading": "Quality products, exceptional service"
+      }
     },
     "rich-text": {
       "type": "rich-text",
