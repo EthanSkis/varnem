@@ -5,17 +5,26 @@
     {% if cart.item_count > 0 %}
       <form action="/cart" method="post">
         {% for item in cart.items %}
-          <div style="display:flex; gap:var(--spacing-sm); padding:var(--spacing-sm) 0; border-bottom:1px solid var(--color-border); align-items:center;">
+          <div class="cart-line" style="display:flex; gap:var(--spacing-sm); padding:var(--spacing-sm) 0; border-bottom:1px solid var(--color-border); align-items:center;">
             <div style="width:80px; height:80px; flex-shrink:0;">
               {% if item.image != blank %}
                 {{ item.image | image_url: width: 160 | image_tag: loading: 'lazy' }}
               {% endif %}
             </div>
-            <div style="flex:1;">
+            <div class="cart-line__info">
               <a href="{{ item.url }}" style="font-weight:600;">{{ item.product.title }}</a>
               {% if item.variant.title != 'Default Title' %}
                 <p style="font-size:0.85rem; color:var(--color-text-light);">{{ item.variant.title }}</p>
               {% endif %}
+            </div>
+            <div class="cart-qty" role="group" aria-label="Change quantity for {{ item.product.title | escape }}">
+              {% if item.quantity > 1 %}
+                <a href="/cart/change?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" class="cart-qty-btn cart-qty-btn--minus" aria-label="Decrease quantity of {{ item.product.title | escape }}">&minus;</a>
+              {% else %}
+                <span class="cart-qty-btn cart-qty-btn--minus is-disabled" aria-hidden="true">&minus;</span>
+              {% endif %}
+              <span class="cart-qty-value" aria-live="polite">{{ item.quantity }}</span>
+              <a href="/cart/change?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" class="cart-qty-btn cart-qty-btn--plus" aria-label="Increase quantity of {{ item.product.title | escape }}">+</a>
             </div>
             <div style="font-weight:600; color:var(--color-accent);">{{ item.line_price | money }}</div>
             <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart-remove" aria-label="Remove {{ item.product.title }}">
