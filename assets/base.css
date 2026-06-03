@@ -622,9 +622,43 @@ h1, h2, h3, h4, h5, h6 {
 
 .newsletter-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   max-width: 500px;
   margin: 0 auto;
+}
+
+.newsletter-message {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.newsletter-message svg {
+  flex-shrink: 0;
+}
+
+.newsletter-message--success {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.newsletter-message--error {
+  background: rgba(220, 38, 38, 0.95);
+  color: #ffffff;
+}
+
+.newsletter-message ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .newsletter-form input {
