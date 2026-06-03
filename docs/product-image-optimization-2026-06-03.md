@@ -75,3 +75,14 @@ deleted at the merchant's request (see *Removed* below).
 - Tiny micro-text on some dials/labels can be slightly imperfect (typical of AI
   generation) but is not noticeable at thumbnail/hero size.
 - Higgsfield credits used: 44 (22 generations × 2 credits).
+
+## Store readiness fixes (Google Ads prep)
+
+Applied directly in Shopify (live immediately — not theme code):
+
+- **Footer menu** (`footer`) now links the policy/help pages: Contact, Shipping
+  Policy, Returns & Refund Policy, Privacy Policy (`/policies/privacy-policy`),
+  Terms of Service — alongside the existing Your Privacy Choices and Search.
+- **Terms of Service** page created and published at `/pages/terms-of-service`.
+- **Support email** `support@varnem.com` surfaced on the Contact page
+  (`/pages/contact`).
